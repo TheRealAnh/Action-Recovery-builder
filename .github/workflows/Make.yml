@@ -80,13 +80,13 @@ jobs:
     - name: Clone device
       run: |
         PATH=~/bin:$PATH
-        cd workspace
+        cd ~/workspace
         git clone ${{ github.event.inputs.DEVICE_URL }} -b ${{ github.event.inputs.DEVICE_BRANCH }} ./${{ github.event.inputs.DEVICE_PATH }}
 
     - name: Building
       run: |
         PATH=~/bin:$PATH
-        cd workspace
+        cd ~/workspace
         export ALLOW_MISSING_DEPENDENCIES=true
         export OF_MAINTAINER="ping2109"
         source build/envsetup.sh
